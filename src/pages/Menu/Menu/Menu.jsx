@@ -19,9 +19,9 @@ const Menu = () => {
   const offered = menu.filter((item) => item.category === "offered");
   return (
     <div>
-      <Helmet>
-        <title>Bistro Boss | Menu</title>
-      </Helmet>
+    <Helmet>
+      <title>Bistro Boss | Menu</title>
+    </Helmet>
 
       <Cover img={menuImg} title={"our menu"}></Cover>
       {/* main cover */}
