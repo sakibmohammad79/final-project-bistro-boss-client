@@ -4,6 +4,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import { AuthContext } from '../../provider/AuthProvider';
 import { Helmet } from 'react-helmet';
 import Swal from 'sweetalert2';
+import SocialLogin from '../shared/SocialLogin/SocialLogin';
 
 const Login = () => {
   const {loginUser} = useContext(AuthContext)
@@ -30,7 +31,7 @@ const Login = () => {
           const user = result.user;
           console.log(user);
           Swal.fire({
-            title: 'Custom animation with Animate.css',
+            title: 'User Successfully Login',
             showClass: {
               popup: 'animate__animated animate__fadeInDown'
             },
@@ -94,6 +95,7 @@ const Login = () => {
           <input disabled={disabled} className="btn bg-yellow-400 border-none"  type="submit" value="Login" />
         </div>
         <p className='text-center font-bold'>New Here?<span className='font-bold text-yellow-400'><Link to='/signin'> Please Register</Link></span></p>
+        <SocialLogin></SocialLogin>
       </div>
       </div>
       </form>
