@@ -9,6 +9,8 @@ const MyCart = () => {
   const [cart, refetch] = useCart();
   const totalPrice = cart.reduce((sum, item) => item.price + sum, 0);
 
+  
+
   const handleDelete = (item) => {
     Swal.fire({
       title: 'Are you sure?',

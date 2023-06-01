@@ -2,12 +2,14 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaBook, FaCalendarAlt, FaHome, FaShoppingCart, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
 import useCart from '../hook/useCart';
+import useAdmin from '../hook/useAdmin';
 
 
 const Dashboard = () => {
   const [cart] = useCart();
   //TODO: data load from the server to have dynamic admin based on data.
-  const isAdmin = true;
+  //const isAdmin = true;
+  const [isAdmin] = useAdmin();
     return (
         <div className="drawer drawer-mobile">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
