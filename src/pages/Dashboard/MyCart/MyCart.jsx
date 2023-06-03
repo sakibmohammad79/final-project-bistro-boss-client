@@ -1,8 +1,9 @@
-import React from "react";
+
 import { Helmet } from "react-helmet";
 import useCart from "../../../hook/useCart";
-import { FaBeer, FaTrashAlt } from 'react-icons/fa';
+import {  FaTrashAlt } from 'react-icons/fa';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyCart = () => {
@@ -51,7 +52,7 @@ const MyCart = () => {
         <h2 className="text-3xl font-bold uppercase">
           Total Price: ${totalPrice}
         </h2>
-        <button className="btn btn-sm btn-warning">Pay</button>
+        <Link to='/dashboard/payment'><button className="btn btn-sm btn-warning">Pay</button></Link>
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
@@ -89,7 +90,7 @@ const MyCart = () => {
                   {item.price}
                 </td>
                 <td>
-                  <button onClick={()=> handleDelete(item)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>
+                <button onClick={()=> handleDelete(item)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>
                 </td>
               </tr> )
             }
