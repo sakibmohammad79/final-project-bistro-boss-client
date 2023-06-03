@@ -64,7 +64,7 @@ const FoodCard = ({item}) => {
       <p className="absolute right-0 mr-12 mt-12 px-2 font-bold rounded text-white bg-slate-900">{'$'+price}</p>
       <div className="card-body items-center text-center">
         <h2 className="card-title font-bold">{name}</h2>
-        <p className="font-semibold">{recipe}</p>
+        <p className="font-bold">{recipe}</p>
         <div className="card-actions">
         <button onClick={()=> handleAddToCart(item)} className="btn bg-slate-100 border-orange-500 text-orange-500 btn-outline border-0 border-b-4">Order Now</button>
         </div>
