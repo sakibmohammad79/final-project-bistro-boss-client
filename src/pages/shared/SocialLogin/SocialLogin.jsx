@@ -18,7 +18,7 @@ const SocialLogin = () => {
             console.log(googleLogedUser);
             const saveUser = { name: googleLogedUser.displayName, email: googleLogedUser.email };
       console.log(saveUser);
-      fetch("http://localhost:5000/users", {
+      fetch("https://bistro-boss-server-liart.vercel.app/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",
