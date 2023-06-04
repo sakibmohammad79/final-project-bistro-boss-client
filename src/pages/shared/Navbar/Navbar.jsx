@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { FaShoppingCart } from 'react-icons/fa';
 import useCart from "../../../hook/useCart";
+import useAdmin from "../../../hook/useAdmin";
 
 const Navbar = () => {
+  const [isAdmin] = useAdmin();
   const { user, logOutUser } = useContext(AuthContext);
   const [cart] = useCart();
   //console.log(cart.length);
@@ -19,7 +21,7 @@ const Navbar = () => {
       <li><Link to="/">Home</Link></li>
       <li><Link to="/menu">Menu</Link></li>
       <li><Link to="/order/salad">Food Order</Link></li>
-      <li><Link to="/secret">Secret</Link></li>
+      <li><Link to={isAdmin ? '/dashboard/adminhome' : '/dashboard/userhome'}>Dashboard</Link></li>
       <li><Link to="/dashboard/mycart">
           <div className="indicator">
             <span className="indicator-item badge badge-secondary">+{cart?.length}</span>
